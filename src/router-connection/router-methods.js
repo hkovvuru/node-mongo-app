@@ -106,6 +106,5 @@ router.delete('/stud', (req, res) => {
     });
 
 });
-
-//Exporting router 
+ 
 module.exports = router;
