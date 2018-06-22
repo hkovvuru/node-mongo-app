@@ -1,7 +1,7 @@
 
 import mongoose from 'mongoose';
 // create Schema instance
-const Schema = mongoose.Schema; 
+const { Schema } = mongoose;
 
 // connecting to the mongodb database using mongoose
 mongoose.connect('mongodb://localhost/mySampleDB', (err) => {
@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost/mySampleDB', (err) => {
 const studentSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     college: {
         type: String,
@@ -29,13 +29,10 @@ const studentSchema = new Schema({
     address: {
         type: String,
     },
-    _id: {
-        type: String,
-    }
 });
 
-//Creating Student reference variable for model
+// Creating Student reference variable for model
 const Student = mongoose.model('students', studentSchema);
 
 // Exporting the Student Model
-module.exports = Student;
+export default Student;
